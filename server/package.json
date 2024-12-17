@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "dev": "nodemon --exec ts-node server.ts"
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node server.ts",
+    "migrate": "prisma migrate deploy"
   },
   "keywords": [],
   "author": "M_D_Aravind",
