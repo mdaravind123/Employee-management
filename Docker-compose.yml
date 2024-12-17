@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./server
+    container_name: employee_backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgresql://postgres:Hicker@97@db:5432/employeeDb
+      - PORT=8080
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+  frontend:
+    build: ./client
+    container_name: employee_frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8080
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    container_name: employee_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Hicker@97
+      POSTGRES_DB: employeeDb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
