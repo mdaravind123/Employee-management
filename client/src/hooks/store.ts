@@ -20,7 +20,7 @@ export const useEmployeeStore = create<EmployeeState>(() => ({
   addEmployee: async (employeeData: Employee) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/employee/add",
+        "https://employee-manaagement-api.onrender.com/api/employee/add",
         employeeData
       );
       toast.success(response.data.message);
