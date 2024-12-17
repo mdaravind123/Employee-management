@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/employee", route);
+app.get("/", (_, res) => {
+  res.status(200).json({ statusCode: 200, msg: "working....." });
+});
 
 app.listen(port, () => {
   console.log(`Port is listening at ${port}`);
