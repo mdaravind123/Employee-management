@@ -88,6 +88,7 @@ const EmployeeForm: React.FC = () => {
           <input
             {...register("empId")}
             type="text"
+            autoComplete="off"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
           {errors.empId && (
@@ -101,6 +102,7 @@ const EmployeeForm: React.FC = () => {
           </label>
           <input
             {...register("name")}
+            autoComplete="off"
             type="text"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
@@ -115,6 +117,7 @@ const EmployeeForm: React.FC = () => {
           </label>
           <input
             {...register("email")}
+            autoComplete="off"
             type="email"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
@@ -129,6 +132,7 @@ const EmployeeForm: React.FC = () => {
           </label>
           <input
             {...register("phone")}
+            autoComplete="off"
             type="text"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
@@ -143,6 +147,7 @@ const EmployeeForm: React.FC = () => {
           </label>
           <select
             {...register("dept")}
+            autoComplete="off"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value="">Select Department</option>
@@ -177,6 +182,7 @@ const EmployeeForm: React.FC = () => {
           </label>
           <input
             {...register("Role")}
+            autoComplete="off"
             type="text"
             className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
