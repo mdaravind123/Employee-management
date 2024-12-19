@@ -68,7 +68,7 @@ export const addEmployee = async (req: Request, res: Response) => {
       });
       return;
     }
-    console.error("Unexpected Error:", error);
+    console.error("Internal Server Error", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
     return;
   }

@@ -75,7 +75,7 @@ const addEmployee = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             });
             return;
         }
-        console.error("Unexpected Error:", error);
+        console.error("Internal Server Error", error);
         res.status(500).json({ success: false, message: "Internal Server Error" });
         return;
     }

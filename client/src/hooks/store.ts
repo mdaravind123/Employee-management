@@ -2,6 +2,10 @@ import { create } from "zustand";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+const apiClient = axios.create({
+  baseURL: "https://employee-manaagement-api.onrender.com/",
+});
+
 interface Employee {
   empId: string;
   name: string;
@@ -19,10 +23,7 @@ interface EmployeeState {
 export const useEmployeeStore = create<EmployeeState>(() => ({
   addEmployee: async (employeeData: Employee) => {
     try {
-      const response = await axios.post(
-        "https://employee-manaagement-api.onrender.com/api/employee/add",
-        employeeData
-      );
+      const response = await apiClient.post("/api/employee/add", employeeData);
       toast.success(response.data.message);
     } catch (error: any) {
       toast.error(error.response?.data?.message || "Error occurred");

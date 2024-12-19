@@ -8,6 +8,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
 const route_1 = __importDefault(require("./routes/route"));
 dotenv_1.default.config();
+console.log(process.env.DATABASE_URL);
 const port = process.env.PORT || 8080;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
