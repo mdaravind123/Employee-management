@@ -17,7 +17,7 @@ COPY . .
 RUN npx prisma generate
 
 # Expose the server port
-EXPOSE 3000
+EXPOSE 8080
 
 # Run the server
 CMD ["npm", "run", "dev"]

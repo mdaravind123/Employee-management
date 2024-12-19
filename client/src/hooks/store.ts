@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const apiClient = axios.create({
-  baseURL: "https://employee-manaagement-api.onrender.com/",
+  baseURL: "http://localhost:8080/",
 });
 
 interface Employee {
